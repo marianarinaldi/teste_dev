@@ -20,7 +20,7 @@ class StudentController extends Controller
             'date_of_birthday' => $request->date_of_birthday,
         ]);
 
-        return "Matrícula cadastrada com Sucesso!";
+        return "Aluno cadastrado com Sucesso!";
     }
 
     public function show($id)
@@ -28,5 +28,25 @@ class StudentController extends Controller
         $student = Student::findOrFail($id);
 
         return view('student.show', ['student' => $student]);
+    }
+
+    public function edit($id)
+    {
+        $student = Student::findOrFail($id);
+
+        return view('student.edit', ['student' => $student]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $student = Student::findOrFail($id);
+
+        $student->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'date_of_birthday' => $request->date_of_birthday,
+        ]);
+
+        return "Aluno atualizado com Sucesso!";
     }
 }

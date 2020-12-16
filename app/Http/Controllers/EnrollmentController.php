@@ -28,4 +28,23 @@ class EnrollmentController extends Controller
 
         return view('enrollment.show', ['enrollment' => $enrollment]);
     }
+
+    public function edit($id)
+    {
+        $enrollment = Enrollment::findOrFail($id);
+
+        return view('enrollment.edit', ['enrollment' => $enrollment]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $enrollment = Enrollment::findOrFail($id);
+
+        $enrollment->update([
+            'courses' => $request->courses,
+            'students' => $request->students,
+        ]);
+
+        return "Matrícula atualizada com Sucesso!";
+    }
 }
