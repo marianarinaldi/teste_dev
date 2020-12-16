@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastrar um Curso</title>
+    <title>Editar um Curso</title>
 </head>
 <body>
     <form action="{{ route('edit_course', ['id' => $course->id]) }}" method="POST">

@@ -33,7 +33,6 @@ class StudentController extends Controller
     public function edit($id)
     {
         $student = Student::findOrFail($id);
-
         return view('student.edit', ['student' => $student]);
     }
 
@@ -48,5 +47,20 @@ class StudentController extends Controller
         ]);
 
         return "Aluno atualizado com Sucesso!";
+    }
+
+    public function delete($id)
+    {
+        $student = Student::findOrFail($id);
+        return view('student.delete', ['student' => $student]);
+    }
+
+    public function destroy($id)
+    {
+        $student = Student::findOrFail($id);
+
+        $student->delete();
+
+        return "Aluno excluído com Sucesso!";
     }
 }

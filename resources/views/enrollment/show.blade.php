@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastrar uma Matrícula</title>
+    <title>Ver uma Matrícula</title>
 </head>
 <body>
     <label for="">Curso</label>

@@ -32,7 +32,6 @@ class EnrollmentController extends Controller
     public function edit($id)
     {
         $enrollment = Enrollment::findOrFail($id);
-
         return view('enrollment.edit', ['enrollment' => $enrollment]);
     }
 
@@ -46,5 +45,19 @@ class EnrollmentController extends Controller
         ]);
 
         return "Matrícula atualizada com Sucesso!";
+    }
+
+    public function delete($id)
+    {
+        $enrollment = Enrollment::findOrFail($id);
+        return view('enrollment.delete', ['enrollment' => $enrollment]);
+    }
+
+    public function destroy($id)
+    {
+        $enrollment = Enrollment::findOrFail($id);
+        $enrollment->delete();
+
+        return "Matrícula excluída com Sucesso!";
     }
 }

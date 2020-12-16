@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastrar um Aluno</title>
+    <title>Ver um Aluno</title>
 </head>
 <body>
     <label for="">Nome</label>
